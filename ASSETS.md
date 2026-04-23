@@ -23,9 +23,9 @@ Every paper figure is listed with the script that produced it and the input data
 
 | Fig | File in paper | Script (this repo) | Input data |
 |-----|---------------|--------------------|------------|
-| A1  | `figures/gpt51_cross_topology.pdf` | `analysis/rebuttal/gpt51_cross_topology.py` | GPT-5.1 per-topic Vendi CSVs (`tsne_code/pertopic_vendi_gpt51_topologies.csv`) |
-| A2  | `img/rebuttal_topic_complexity_v3.pdf` | `analysis/rebuttal/topic_complexity.py` | Group-size extracted proposals (same as Fig. 7) |
-| A3  | `img/rebuttal_w3_factorial_2x2.pdf` | `analysis/rebuttal/w3_factorial.py` | W3 factorial CSVs (top-level `rebuttal_w3_*.csv`) |
+| A1  | `figures/gpt51_cross_topology.pdf` | `analysis/figures/figA1_gpt51_cross_topology.py` | GPT-5.1 per-topic Vendi CSVs (`tsne_code/pertopic_vendi_gpt51_topologies.csv`) |
+| A2  | Topic Complexity panel (appendix) | `analysis/figures/figA2_topic_complexity.py` | Group-size extracted proposals (same as Fig. 7). Writes `appendix_topic_complexity.png`. |
+| A3  | W3 Factorial 2×2 panel (appendix) | `analysis/figures/figA3_w3_factorial.py` | W3 factorial CSVs (`appendix_w3_all_conditions.csv`, `appendix_w3_comparisons.csv`). Writes `appendix_w3_factorial_2x2.png`. |
 
 ## Simulation config ↔ paper condition
 

@@ -331,7 +331,7 @@ if __name__ == "__main__":
     print("\n=== Data Analysis Table ===")
     print(df_agg)
 
-    # --- 6. 绘图：Ideal vs Actual (Reviewer-Proof) ---
+    # --- 6. Plot: Ideal vs Actual ---
     
     sns.set_theme(style="white", rc={"axes.grid": False})
     fig, ax1 = plt.subplots(figsize=(10, 6))

@@ -16,11 +16,10 @@ MAS_Diversity/
 │   └── configs/                        # 9 YAML configs (model × persona × topology)
 ├── analysis/
 │   ├── metrics/                        # Vendi, Order Parameter, PCD, Self-BLEU, etc.
-│   ├── figures/                        # fig02_*.py … fig12_*.py — one per paper figure
-│   └── rebuttal/                       # Appendix figures
+│   └── figures/                        # fig02…fig12 (main) + figA1…figA3 (appendix)
 ├── docs/
 │   └── persona_mapping.md              # Paper persona names ↔ config suffixes
-├── FIGURES.md                          # Figure → script → required data mapping
+├── ASSETS.md                           # Figure → script → required data mapping
 ├── requirements.txt
 └── LICENSE                             # MIT
 ```
@@ -58,7 +57,7 @@ python simulation/launch_scientist.py --config simulation/configs/dsv3_naive_rec
 python simulation/extract_txt.py --input outputs/dsv3_naive_recursive --output data/extracted_proposals/recursive
 ```
 
-Each config in `simulation/configs/` specifies one (model × persona × topology) cell from the paper. Run the configs you need for the figures you want to reproduce; `FIGURES.md` lists the input requirement per figure.
+Each config in `simulation/configs/` specifies one (model × persona × topology) cell from the paper. Run the configs you need for the figures you want to reproduce; `ASSETS.md` lists the input requirement per figure.
 
 ### 2. Compute metrics
 
@@ -86,7 +85,7 @@ python analysis/figures/fig03_persona_bar.py
 # ... one script per paper figure
 ```
 
-Full script-to-figure mapping: see [FIGURES.md](./FIGURES.md).
+Full script-to-figure mapping: see [ASSETS.md](./ASSETS.md).
 
 ## What's excluded
 
@@ -97,17 +96,17 @@ To keep the repository lightweight, the following are **not** shipped:
 - Aggregated metric CSVs (regenerated from stage 2)
 - LLM-as-judge batch evaluation scripts (paper-specific infrastructure)
 
-`FIGURES.md` documents what each figure expects under `./data/`.
+`ASSETS.md` documents what each figure expects under `./data/`.
 
 ## Citation
 
 ```bibtex
-@inproceedings{chen2026diversity,
-  title={Diversity Collapse in Multi-Agent LLM Systems:
-         Structural Coupling and Collective Failure in Open-Ended Idea Generation},
-  author={Chen, Nuo and He, Bingsheng},
-  booktitle={Proceedings of the 2026 Conference of the Association for Computational Linguistics (ACL)},
-  year={2026}
+@inproceedings{chen2026masdiversity,
+  title={Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation},
+  author={Nuo Chen and Yicheng Tong and Yuzhe Yang and Yufei He and Xueyi Zhang and Qingyun Zou and Qian Wang and Bingsheng He},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+  year={2026},
+  note={Available on arXiv:2604.18005}
 }
 ```
 

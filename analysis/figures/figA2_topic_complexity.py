@@ -1,7 +1,7 @@
 """
-Rebuttal Analysis v3: Topic Complexity & Independent Baseline
+Topic Complexity & Independent Baseline Analysis (Appendix)
 
-Reviewer concern: "Maybe only ~3 low-hanging-fruit ideas exist per topic,
+Alternative hypothesis: only ~3 low-hanging-fruit ideas exist per topic,
 so saturation is inherent to topic difficulty, not a MAS failure."
 
 KEY DATA INSIGHT:
@@ -15,7 +15,7 @@ KEY DATA INSIGHT:
 - The Utilization Ratio (Vendi/N) drops because the gain is SUB-LINEAR,
   not because topics run out of ideas.
 
-Two-pronged rebuttal:
+Two-pronged analysis:
 1. TOPIC CAPACITY: 50 independent proposals per topic achieve Vendi >> 3,
    and absolute Vendi GROWS with group size → topics are not exhausted.
 2. INDEPENDENT BASELINE: Compare diversity of proposals from independent
@@ -352,7 +352,7 @@ for grp, color, marker in [("High Capacity", "#2ecc71", "s"), ("Low Capacity", "
 
 # "3 ideas" ceiling
 ax_a.axhline(y=3.0, color="red", linestyle="--", linewidth=2, alpha=0.6)
-ax_a.text(7.15, 3.0, 'Reviewer: "only 3\ndistinct ideas"', fontsize=9,
+ax_a.text(7.15, 3.0, 'Alt. hypothesis:\n"only 3\ndistinct ideas"', fontsize=9,
           color="red", va="center", fontweight="bold")
 
 ax_a.set_xlabel("Group Size ($N$)", fontsize=12)
@@ -459,8 +459,8 @@ ax_d.set_title("(d) Topic Complexity vs. Scaling Potential",
                fontsize=12, fontweight="bold")
 ax_d.legend(fontsize=9)
 
-plt.savefig("rebuttal_topic_complexity_v3.png", dpi=300, bbox_inches="tight")
-print("\nSaved: rebuttal_topic_complexity_v3.png")
+plt.savefig("appendix_topic_complexity.png", dpi=300, bbox_inches="tight")
+print("\nSaved: appendix_topic_complexity.png")
 plt.close()
 
 
@@ -469,7 +469,7 @@ plt.close()
 # ══════════════════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("SUMMARY FOR REBUTTAL")
+print("SUMMARY")
 print("=" * 70)
 
 print(f"""
@@ -500,7 +500,7 @@ print(f"""
 """)
 
 # Save
-df_full.to_csv("rebuttal_per_topic_groupsize_vendi_v3.csv", index=False)
-df_topic.to_csv("rebuttal_topic_complexity_v3.csv", index=False)
-df_comp.to_csv("rebuttal_bootstrap_comparison_v3.csv", index=False)
+df_full.to_csv("appendix_per_topic_groupsize_vendi.csv", index=False)
+df_topic.to_csv("appendix_topic_complexity.csv", index=False)
+df_comp.to_csv("appendix_bootstrap_comparison.csv", index=False)
 print("Saved CSVs.")

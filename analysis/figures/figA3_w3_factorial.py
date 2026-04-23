@@ -1,7 +1,7 @@
 """
-W3 Rebuttal: Cross-Persona Topology Effect Consistency Analysis
+Cross-Persona Topology Effect Consistency Analysis (Appendix)
 
-Reviewer concern: "Topology effects may vary when agents have different persona structures."
+Concern addressed: topology effects may vary under different persona structures.
 
 Strategy: Show that topology interventions (NGT, Subgroup) consistently improve diversity
 over Recursive baseline across ALL available persona × model combinations:
@@ -10,7 +10,7 @@ over Recursive baseline across ALL available persona × model combinations:
   3. GPT-5.1 + Interdisciplinary: Recursive vs NGT
 
 If the topology effect direction is consistent across all three persona structures,
-the reviewer's concern is empirically addressed.
+the concern is empirically addressed.
 """
 
 import re
@@ -383,22 +383,22 @@ ax_c.set_ylabel("Δ Vendi per topic", fontsize=11)
 ax_c.set_title("(c) Per-Topic Effect Distribution\n(diamonds = mean; dots = individual topics)",
                fontsize=11, fontweight="bold")
 
-plt.savefig("./data/rebuttal_w3_topology_consistency.png", dpi=300, bbox_inches="tight")
-print("\nSaved: rebuttal_w3_topology_consistency.png")
+plt.savefig("./data/appendix_w3_topology_consistency.png", dpi=300, bbox_inches="tight")
+print("\nSaved: appendix_w3_topology_consistency.png")
 plt.close()
 
 
 # ── Save data ───────────────────────────────────────────────────────────────
 
-df.to_csv("./data/rebuttal_w3_all_conditions.csv", index=False)
-df_comp.to_csv("./data/rebuttal_w3_comparisons.csv", index=False)
+df.to_csv("./data/appendix_w3_all_conditions.csv", index=False)
+df_comp.to_csv("./data/appendix_w3_comparisons.csv", index=False)
 print("Saved CSVs.")
 
 
 # ── Summary ─────────────────────────────────────────────────────────────────
 
 print("\n" + "=" * 70)
-print("SUMMARY FOR REBUTTAL")
+print("SUMMARY")
 print("=" * 70)
 
 n_positive = (df_comp["delta"] > 0).sum()
@@ -418,7 +418,7 @@ for _, row in df_comp.iterrows():
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# FIGURE 2: 2×2 Factorial (DSV3 only) — Key W3 Rebuttal Figure
+# FIGURE 2: 2×2 Factorial (DSV3 only) — Key Appendix Figure
 # ══════════════════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
@@ -530,8 +530,8 @@ if factorial_available:
         ax.legend(fontsize=10)
 
     plt.tight_layout()
-    fig2.savefig("./data/rebuttal_w3_factorial_2x2.png", dpi=300, bbox_inches="tight")
-    print("\nSaved: rebuttal_w3_factorial_2x2.png")
+    fig2.savefig("./data/appendix_w3_factorial_2x2.png", dpi=300, bbox_inches="tight")
+    print("\nSaved: appendix_w3_factorial_2x2.png")
     plt.close(fig2)
 else:
     missing = [k for k in factorial_keys if k not in cell_data]
