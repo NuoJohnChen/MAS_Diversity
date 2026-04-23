@@ -1,0 +1,33 @@
+# Data — not shipped with the code release
+data/
+cache_*/
+*.pkl
+*.jsonl
+*.csv
+extracted_proposals*/
+embeddings_cache*/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local outputs
+outputs/
+runs/
+logs/
+*.log
